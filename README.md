@@ -1,4 +1,4 @@
-#Тестовое задание
+# Тестовое задание
 
 Написать функцию sostavChisla(massivChisel: number[], chislo: number),
 которая бы находила все возможные комбинации чисел из massivChisel,
