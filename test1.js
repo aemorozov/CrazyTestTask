@@ -25,7 +25,6 @@ function sostavChisla(massivChisel, chislo) {
     const result = []
     let littleArray = []
     let sum = 0
-    let count = 0
 
     for (let i = 0; i < massivChisel.length; i++) {
         count++
@@ -80,11 +79,13 @@ function sostavChisla(massivChisel, chislo) {
     return result
 }
 
+let count = 0
 const startTime = performance.now()
 console.log(sostavChisla([8, 2, 3, 4, 6, 7, 1, 5], 17));
 const endTime = performance.now()
 const fullTime = endTime - startTime
 console.log('Время выполнения: ', fullTime.toFixed(1), 'ms')
+console.log('Количество операций: ', count)
 
 // function compareNumericArrays(arr1, arr2) {
 //     if (arr1.length !== arr2.length) {
