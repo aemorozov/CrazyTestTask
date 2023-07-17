@@ -55,13 +55,16 @@ function sostavChisla(massivChisel, chislo) {
         if (sum != chislo) {
             if (sum < chislo) {
                 if (i === massivChisel.length - 1) {
-                    if (littleArray[littleArray.length - 2] === massivChisel[massivChisel.length - 2]) {
+                    if (littleArray.length === 2) {
                         i = massivChisel.indexOf(littleArray[0])
                         littleArray = []
                     }
+                    else if (littleArray.length === 1 && littleArray[0] === massivChisel[massivChisel.length - 1]) {
+                        return result
+                    }
                     else {
                         i = massivChisel.indexOf(littleArray[littleArray.length - 2])
-                        littleArray = littleArray.slice(0, 1)
+                        littleArray = littleArray.slice(0, littleArray.length - 2)
                     }
                 }
             }
