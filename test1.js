@@ -32,14 +32,11 @@ function sostavChisla(massivChisel, chislo) {
 
         littleArray.push(massivChisel[i])
 
-        console.log(count, littleArray)
-
         littleArray.forEach(element => {
             sum += element
         })
 
         if (sum === chislo) {
-            console.log(littleArray)
             if (i === massivChisel.length - 1) {
                 result.push(Array.from(littleArray))
                 i = massivChisel.indexOf(littleArray[littleArray.length - 2])
@@ -83,150 +80,11 @@ function sostavChisla(massivChisel, chislo) {
     return result
 }
 
-console.log(sostavChisla([7, 8, 3, 4, 5, 6, 1, 2], 15));
-// [8, 7, 6, 5, 4, 3, 2, 1]
-// (0, 1, 2, 3, 4, 5, 6, 7)
-// function sostavChisla(massivChisel, chislo) {
-
-//     function SortForNumbersAndRevers(a, b) {
-//         if (a < b) return 1;
-//         if (a == b) return 0;
-//         if (a > b) return -1;
-//     }
-
-//     massivChisel.sort(SortForNumbersAndRevers)
-//     const result = []
-//     let littleArray = []
-//     let sum = 0
-//     let count = 0
-//     // console.log(massivChisel)
-//     // [8, 7, 6, 5, 4, 3, 2, 1]
-//     // (0, 1, 2, 3, 4, 5, 6, 7)
-
-//     for (let i = 0; i < massivChisel.length; i++) {
-//         count++
-//         console.log(i)
-
-//         littleArray.push(massivChisel[i])
-
-//         if (result.map(x => String(x) === String(littleArray)).includes(true)) {
-//             i = massivChisel.indexOf(littleArray[1])
-//             littleArray = littleArray.slice(0, 1)
-//         } else {
-//             littleArray.forEach(element => {
-//                 sum += element
-//             })
-
-//             if (sum > chislo) {
-//                 littleArray.pop()
-//             }
-
-//             if (sum < chislo && i === (massivChisel.length - 1)) {
-//                 i = massivChisel.indexOf(littleArray[0])
-//                 littleArray = []
-//                 // console.log('i стал', i)
-//             }
-
-//             if (sum === chislo) {
-//                 result.push(littleArray)
-//                 if (i === 0) {
-//                     i = massivChisel.indexOf(littleArray[0])
-//                     // console.log('1', 'result', result, 'littleArray', littleArray, 'i', i)
-//                     littleArray = []
-//                     console.log(i)
-//                 } else if (i === (massivChisel.length - 1)) {
-//                     i = massivChisel.indexOf(littleArray[littleArray.length - 2])
-//                     littleArray = littleArray.slice(0, littleArray.length - 2)
-//                     console.log(i)
-//                 } else {
-//                     i = massivChisel.indexOf(littleArray[0]) - 1
-//                     // console.log('2', 'result', result, 'littleArray', littleArray, 'i', i)
-//                     littleArray = []
-//                     console.log(i)
-//                 }
-//             }
-//             console.log(i)
-//         }
-//         // console.log('3', 'result', result, 'littleArray', littleArray, 'i', i)
-//         sum = 0
-//     }
-
-//     console.log('Операций:', count)
-//     return result
-// }
-
-// console.log(sostavChisla([7, 8, 3, 4, 5, 6, 1, 2], 15));
-
-
-// function sostavChisla(massivChisel, chislo) {
-//     massivChisel.sort().reverse()
-//     const result = []
-//     let littleArray = []
-//     let sum = 0
-
-//     for (let i = 0; i < massivChisel.length - 1; i++) {
-//         littleArray.push(massivChisel[i])
-//         if (result.map(x => String(x) === String(littleArray)).includes(true)) {
-//             // console.log('x', result.map(x => String(x) === String(littleArray)).includes(true))
-//             // console.log('зашли', littleArray)
-//             if (littleArray.length === 1 || littleArray.length === 2) {
-//                 littleArray.pop()
-//             } else {
-//                 littleArray = [littleArray[0]]
-//                 i = massivChisel.indexOf(littleArray[0])
-//                 console.log('зашли', littleArray)
-//             }
-
-//         } else {
-//             // console.log('не зашли', littleArray)
-//             littleArray.forEach(element => {
-//                 sum += element
-//             })
-//             if (sum > chislo) {
-//                 littleArray.pop()
-//             }
-//             if (sum === chislo) {
-//                 result.push(littleArray)
-//                 i = massivChisel.indexOf(littleArray[0])
-//                 if (i != 0 || i != (massivChisel.length - 1)) {
-//                     i = massivChisel.indexOf(littleArray[0]) - 1
-//                     // console.log('зашли и поменяли i ', i)
-//                 }
-//                 littleArray = []
-//             }
-//             sum = 0
-//         }
-
-//     }
-//     return result
-// }
-
-// console.log(sostavChisla([8, 5, 4, 3, 2, 1, 0], 8));
-// console.log(sostavChisla([8, 2, 3, 4, 6, 7, 1], 15));
-
-// function sostavChisla(massivChisel, chislo) {
-
-//     const obj = {}
-//     const result = []
-
-//     massivChisel.forEach(element => {
-//         const pair = chislo - element
-//         obj[element] = pair
-
-//         const isPairFound = obj.hasOwnProperty(pair)
-
-//         if (isPairFound) {
-//             result.push([element, pair])
-//         }
-
-//         if (element === chislo) {
-//             result.push([element])
-//         }
-
-//     });
-//     return result
-
-// }
+const startTime = performance.now()
+console.log(sostavChisla([8, 2, 3, 4, 6, 7, 1, 5], 17));
+const endTime = performance.now()
+const fullTime = endTime - startTime
+console.log('Время выполнения: ', fullTime.toFixed(1), 'ms')
 
 // function compareNumericArrays(arr1, arr2) {
 //     if (arr1.length !== arr2.length) {
